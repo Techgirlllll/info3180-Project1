@@ -1,3 +1,48 @@
 body {
     padding-top: 5rem;
+    background-color: #e3e4e7;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 2%;
+}
+
+.container1 {
+    background-color: #fff;
+    padding: 50px 100px 100px 100px;
+    width: 90%;
+}
+
+.proPT {
+    display: grid;
+    grid-template-columns: repeat(2, 1.5fr);
+}
+
+textarea {
+    resize:none;
+    height: 100px;
+}
+
+.photoForm {
+    display: flex;
+}
+
+.form-group{
+    font-weight: bold;
+    padding: 10px 10px 10px 10px;
+}
+
+.btn-primary{
+    margin-top: 5%;
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: 700;
+    border-style: none;
+}
+
+.btn-primary:active {
+    box-shadow: 0 5px rgb(10, 10, 10);
+    transform: translateY(4px);
 }
