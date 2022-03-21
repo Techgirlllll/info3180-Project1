@@ -40,5 +40,5 @@ class Prop(db.Model):
             return str(self.id)  # python 3 support
     
     def __repr__(self):
-        return '<Property %r>' % (self.property_title)
+        return '<Property %r>' % (self.propertyTitle)
         

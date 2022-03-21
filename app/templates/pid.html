@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class = "singleProp">
+        <div class = "cardrow">
+            <img class ="propertPic" src="{{url_for('get_image',filename=propertyid.photo)}}" alt="Apartment Picture">
+            <div class = "pbody">
+                <h3> {{propertyid.propertyTitle}} </h3>
+                <div class="prop-details">
+                    <div class ="priceCircle">
+                        {{propertyid.price}}
+                    </div>
+                    <div class = "propType">
+                        {{propertyid.propertyType}}
+                    </div>
+                </div>
+                <div class="descpara">
+                    <p > {{propertyid.propertyDesc}}</p>
+                </div>
+
+                <div class = "rooms">
+                    <img class ="bathpic" src="{{url_for('static',filename='css/icons/icons8-bedroom-64.png')}}">
+                    {{propertyid.no_of_bedrooms}} Bedrooms 
+                    <img class ="bathpic" src="{{url_for('static',filename='css/icons/icons8-bathroom-64.png')}}">
+                    {{propertyid.no_of_bathrooms}} Bathrooms
+                </div>
+        
+                <div class = "proplocation"> 
+                    <img src="{{url_for('static',filename='css/icons/icons8-location-24.png')}}"> {{propertyid.location}} 
+                </div>
+                <a href="#" class="btn-email"> Email Realtor </a>
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}

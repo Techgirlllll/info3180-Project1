@@ -69,8 +69,9 @@ def properties():
 
 @app.route('/properties')
 def Pproperties():
-    propert = Prop.query.all()
-    return render_template('properties.html', propert=propert)
+    properties = Prop.query.all()
+    print(properties)
+    return render_template('properties.html', propert=properties)
 
 @app.route("/properties/<propertyid>")
 def pid(propertyid):

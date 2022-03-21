@@ -1,27 +1,31 @@
 {% extends "base.html" %}
 
 {% block main %}
+{% include 'flash_messages.html' %}
+
+<h1 class="header2"> Properties </h1>
 
 <div class = "propRow">
-    <h1 class="header"> Properties </h1>
-    {% include 'flash_messages.html' %}
-    
-    <div>
-        {% for prop in properties %}
-        <div class="card">
-            <div> <img class ="pic" src="{{url_for('get_image',filename=prop.photo)}}" alt="Apartment Picture"> </div>
+    {% for prop in propert %}  
+    <div class="card-width">
+        <div class = "propertyCard">
+             <img class ="propertyPict" src="{{url_for('get_image',filename=prop.photo)}}" alt="Apartment Picture">
         </div>
-    </div>
 
-    <div class = "details">
-        <h3 class= "title"> {{prop.propertyDesc}} </h3>
-        <p class= "location"> {{prop.location}} </p>
-        <p>{{prop.price}} </p>
-    </div>
+        <div class = "details">
+            <h3> {{prop.propertyTitle}} </h3>
+            <div class="locationIcon">        
+                <img class="locationPic" src="{{url_for('static',filename='css/icons/icons8-location-24.png')}}"> 
+                <p class= "location"> {{prop.location}} </p>
+            </div>  
+            <p class = "priceTag"> {{prop.price}} </p>
+        </div>
 
-    <div>
-        <a href = "{{url_for('pid', pid=prop.id)}}" class= "viewProp"> View Property</a>
+        <div class= "viewButton">
+           <a href = "{{url_for('pid', propertyid=prop.id)}}" class= "viewButton"> View Property</a>
+        </div>
     </div>
     {% endfor %}
 </div>
 {% endblock %}
+ 
